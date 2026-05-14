@@ -6,21 +6,14 @@
 #include <stdint.h>
 
 /*
-  TLV320DAC3100 (Adafruit breakout) minimal driver for STM32 HAL.
+  TLV320DAC3100 (Adafruit breakout)  driver for STM32 HAL.
 
   Assumptions (default init):
   - STM32 provides I2S clocks (BCLK + LRCLK/WS), codec is I2S SLAVE.
-  - 16-bit I2S Philips format.
+  - 16-bit I2S format.
   - 48 kHz nominal.
   - Prefer MCLK present (256*Fs). If not, optional BCLK-as-PLL-input mode.
-
-  Wiring reminder (STM32 I2S2 example):
-    PB10 = I2S2_CK  -> DAC BCLK
-    PB12 = I2S2_WS  -> DAC LRCLK/WS
-    PC3  = I2S2_SD  -> DAC DIN
-    PA6  = I2S2_MCK -> DAC MCK (recommended)
-    I2C SDA/SCL -> DAC SDA/SCL
-    GND common
+ 
 */
 
 #ifdef __cplusplus
